@@ -1,10 +1,19 @@
 // Core
 import React from 'react';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+// Domains
+import { Book } from './bus/book';
+
+// Other
+import { client } from './init/client';
 
 export const App = () => {
   return (
     <>
-      <h1>Hello World!</h1>
+      <ApolloProvider client={client}>
+        <Book />
+      </ApolloProvider>
     </>
   )
 };
